@@ -17,11 +17,11 @@ public class QuizContext(DbContextOptions<QuizContext> options)
 
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        ApplyTimeStampChnages();
+        ApplyTimeStampChanges();
         return await base.SaveChangesAsync(cancellationToken);
     }
 
-    private void ApplyTimeStampChnages()
+    private void ApplyTimeStampChanges()
     {
         foreach (var entry in ChangeTracker.Entries())
         {
